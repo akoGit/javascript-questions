@@ -75,9 +75,9 @@ sayHi();
 
 #### Answer: D
 
-ფუნქციაში პირველად ვადეკლარირებთ `name` ცვლადს, სპეციალური სიტყვით `var`. This means that the variable gets hoisted (memory space is set up during the creation phase) with the default value of `undefined`, until we actually get to the line where we define the variable. We haven't defined the variable yet on the line where we try to log the `name` variable, so it still holds the value of `undefined`.
+ფუნქციაში პირველად ვადეკლარირებთ `name` ცვლადს, სპეციალური სიტყვით `var`. რაც ნიშნავს, რომ ცვლადი აიწევა(gets hoisted) თავდაპირველი(default) მნიშვნელობით `undefined`, სანამ მივალთ იმ კოდის ხაზამდე, როდესაც ცვლადს ვანიჭებთ მნიშვნელობას. ჩვენ ჯერ არ მიგვინიჭებია ცვლადისთვის მნიშვნელობა იმ ხაზზე, რომელზეც ჩვენ ვცდილობთ, რომ `name` ცვლადი დავლოგოთ(გამოვიყენოთ), ამიტომ მისი მნიშვნელობა `undefined`-ია.
 
-Variables with the `let` keyword (and `const`) are hoisted, but unlike `var`, don't get <i>initialized</i>. They are not accessible before the line we declare (initialize) them. This is called the "temporal dead zone". When we try to access the variables before they are declared, JavaScript throws a `ReferenceError`.
+ცვლადები სპეციალური სიტყვით `let` (და `const`) ასევე აიწევა, მაგრამ `var`-ისგან განსხვავებით, არ ინიციალიზდება <i>initialized</i>. ისინი არ არიან ხელმისაწვდომი, სანამ ჩვენ მათ მნიშვნელობას არ მივანიჭებთ. ამას ქვია "დროებითი მკვდარი ზონა(temporal dead zone)". როდესაც ვცდილობთ ცვლადების გამოყენებას მათ დეკლარირებამდე, ჯავასკრიპტი გვაძლევს `ReferenceError`-ს.
 
 </p>
 </details>
