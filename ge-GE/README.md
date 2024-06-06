@@ -84,7 +84,7 @@ sayHi();
 
 ---
 
-###### 2. What's the output?
+###### 2. რას დაგვიბრუნებს კონსოლში?
 
 ```javascript
 for (var i = 0; i < 3; i++) {
@@ -96,25 +96,25 @@ for (let i = 0; i < 3; i++) {
 }
 ```
 
-- A: `0 1 2` and `0 1 2`
-- B: `0 1 2` and `3 3 3`
-- C: `3 3 3` and `0 1 2`
+- A: `0 1 2` და `0 1 2`
+- B: `0 1 2` და `3 3 3`
+- C: `3 3 3` და `0 1 2`
 
 <details><summary><b>Answer</b></summary>
 <p>
 
 #### Answer: C
 
-Because of the event queue in JavaScript, the `setTimeout` callback function is called _after_ the loop has been executed. Since the variable `i` in the first loop was declared using the `var` keyword, this value was global. During the loop, we incremented the value of `i` by `1` each time, using the unary operator `++`. By the time the `setTimeout` callback function was invoked, `i` was equal to `3` in the first example.
+ჯავასკრიპტში მოვლენების რიგის გამო, `setTimeout` ფუნქცია გამოძახება ციკლის დასრულების შემდეგ. ვინაიდან ცვლადი `i` პირველ ციკლში გამოცხადდა `var`სპეციალური სიტყვის გამოყენებით, ეს მნიშვნელობა იყო გლობალური. ციკლის დროს, ჩვენ ყოველ ჯერზე ვზრდიდით `i`-ის მნიშვნელობას `1`-ით, უნარული ოპერატორის გამოყენებით `++`. იმ დროისთვის, როდესაც 'setTimeout' ფუნქცია იქნა გამოძახებული `i` უდრიდა `3`-ს პირველ მაგალითში.
 
-In the second loop, the variable `i` was declared using the `let` keyword: variables declared with the `let` (and `const`) keyword are block-scoped (a block is anything between `{ }`). During each iteration, `i` will have a new value, and each value is scoped inside the loop.
+მეორე ციკლში, ცვლადი `i` გამოცხადდა `let` სპეციალური სიტყვის გამოყენებით: ცვლადები გამოცხადებული `let` (და `const`) სპეციალური სიტყვით მხოლოდ ბლკოს შიგნითაა ხელმისაწვდომი (ბლოკი არის ყველაფერი `{ }`-ს შორის). ყოველი იტერაციის დროს `i`-ს ექნება ახალი მნიშვნელობა და თითოეული მნიშვნელობა ციკლის შიგნითაა მოქცეული.
 
 </p>
 </details>
 
 ---
 
-###### 3. What's the output?
+###### 3. რას დაგვიბრუნებს კონსოლში?
 
 ```javascript
 const shape = {
@@ -129,46 +129,45 @@ console.log(shape.diameter());
 console.log(shape.perimeter());
 ```
 
-- A: `20` and `62.83185307179586`
-- B: `20` and `NaN`
-- C: `20` and `63`
-- D: `NaN` and `63`
+- A: `20` და `62.83185307179586`
+- B: `20` და `NaN`
+- C: `20` და `63`
+- D: `NaN` და `63`
 
 <details><summary><b>Answer</b></summary>
 <p>
 
 #### Answer: B
 
-Note that the value of `diameter` is a regular function, whereas the value of `perimeter` is an arrow function.
+ყურადღება მიაქციეთ, რომ `diameter`-ი ჩვეულებრივი ფუნქციაა, და `perimeter`-ის მნიშვნელობა ისრებიანი ფუნქციაა.
 
-With arrow functions, the `this` keyword refers to its current surrounding scope, unlike regular functions! This means that when we call `perimeter`, it doesn't refer to the shape object, but to its surrounding scope (window for example).
+ისრებიან ფუნქციაში,`this` სპეციალური სიტყვა მიუთითებს მის გარშემომყოფ გარემოს(scope), ჩვეულებრივი ფუნქციებისგან განსხვავებით! ეს ნიშნავს, რომ როდესაც ვიძახებთ `perimeter`-ს, ის არ მიუთითებს `shape` ობიექტს, მაგრამ მის გარშემომყოფ გარემოს (window-ს მაგალითად).
 
-Since there is no value `radius` in the scope of the arrow function, `this.radius` returns `undefined` which, when multiplied by `2 * Math.PI`, results in `NaN`.
-
+ვინაიდან `radius`-ს არ აქვს მნიშვნელობა ისრებიანი ფუნქციის შიგნით, `this.radius` აბრუნებს `undefined`-ს, რომელიც `2 * Math.PI`-ზე გამრავლების შედეგად `NaN`-ია.
 </p>
 </details>
 
 ---
 
-###### 4. What's the output?
+###### 4. რას დაგვიბრუნებს კონსოლში?
 
 ```javascript
 +true;
 !'Lydia';
 ```
 
-- A: `1` and `false`
-- B: `false` and `NaN`
-- C: `false` and `false`
+- A: `1` და `false`
+- B: `false` და `NaN`
+- C: `false` და `false`
 
 <details><summary><b>Answer</b></summary>
 <p>
 
 #### Answer: A
 
-The unary plus tries to convert an operand to a number. `true` is `1`, and `false` is `0`.
+უნარული ოპერატორი პლიუსი ცდილობს `true`-ს რიცხვად გარდაქმნას. `true` არის `1`, ხოლო `false` არის `0`.
 
-The string `'Lydia'` is a truthy value. What we're actually asking, is "Is this truthy value falsy?". This returns `false`.
+სტრინგი `'Lydia'` არის ჭეშმარიტი(truthy) მნიშვნელობის. ჩვენ ვსვავთ კითხვას, "არის ეს ჭეშმარიტი მნიშვნელობა მცდარი?". ეს გვიბრუნებს `false`-ს.
 
 </p>
 </details>
