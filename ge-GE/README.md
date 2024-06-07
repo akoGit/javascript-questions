@@ -174,7 +174,7 @@ console.log(shape.perimeter());
 
 ---
 
-###### 5. რომელი პასუხია დადებითი?
+###### 5. რომელი პასუხია მართალი?
 
 ```javascript
 const bird = {
