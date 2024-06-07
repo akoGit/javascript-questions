@@ -174,7 +174,7 @@ console.log(shape.perimeter());
 
 ---
 
-###### 5. Which one is true?
+###### 5. რომელი პასუხია დადებითი?
 
 ```javascript
 const bird = {
@@ -187,30 +187,30 @@ const mouse = {
 };
 ```
 
-- A: `mouse.bird.size` is not valid
-- B: `mouse[bird.size]` is not valid
-- C: `mouse[bird["size"]]` is not valid
-- D: All of them are valid
+- A: `mouse.bird.size` არ არის ვალიდური
+- B: `mouse[bird.size]` არ არის ვალიდური
+- C: `mouse[bird["size"]]` არ არის ვალიდური
+- D: ყველა ვალიდურია
 
 <details><summary><b>Answer</b></summary>
 <p>
 
 #### Answer: A
 
-In JavaScript, all object keys are strings (unless it's a Symbol). Even though we might not _type_ them as strings, they are always converted into strings under the hood.
+ჯავასკრიპტში ყველა ობიექტის key-ები არის სტრინგი ( თუ სიმბოლო არაა). იმის მიუხედავად , რომ ჩვენ არ ჩავწეროთ როგორც სტრინგი, ისინი მაინც გარდაიქმნებიან სტრინგებად ფარდის უკან.
 
-JavaScript interprets (or unboxes) statements. When we use bracket notation, it sees the first opening bracket `[` and keeps going until it finds the closing bracket `]`. Only then, it will evaluate the statement.
+ჯავასკრიპტი ინტერპრეტირებს (ან ხსნის) განცხადებებს. როდესაც ვიყენებთ კვადრატულ ფრჩხილებს, ის ხედავს პირველ გახსნილ ფრჩხილს `[` და აგრძელებს ძებნას , სანამ არ ნახავს დახურულს `]`. მხოლოდ ამის შემდეგ, ის შეაფასებს განცხადებას.
 
-`mouse[bird.size]`: First it evaluates `bird.size`, which is `"small"`. `mouse["small"]` returns `true`
+`mouse[bird.size]`: პირველად აფასებს `bird.size`, რომელიც არის `"small"`. `mouse["small"]` აბრუნებს `true`-ს.
 
-However, with dot notation, this doesn't happen. `mouse` does not have a key called `bird`, which means that `mouse.bird` is `undefined`. Then, we ask for the `size` using dot notation: `mouse.bird.size`. Since `mouse.bird` is `undefined`, we're actually asking `undefined.size`. This isn't valid, and will throw an error similar to `Cannot read property "size" of undefined`.
+თუმცა, წერტილოანი ნოტაციით, ეს არ ხდება. `mouse`-ს არ აქვს key სახელად `bird`, რაც ნიშნავს , რომ `mouse.bird` არის `undefined`. შემდეგ, ჩვენ ვითხოვთ `size`-ს წერტილოვანი ნოტაციით: `mouse.bird.size`. რადგან `mouse.bird` არის `undefined`-ი, ჩვენ სინამდვილეში ვითხოვთ `undefined.size`. ეს არ არის ვალიდური და ამოგვიგდებს error-ს: `Cannot read property "size" of undefined`.
 
 </p>
 </details>
 
 ---
 
-###### 6. What's the output?
+###### 6. რას დაგვიბრუნებს კონსოლში?
 
 ```javascript
 let c = { greeting: 'Hey!' };
@@ -232,20 +232,20 @@ console.log(d.greeting);
 
 #### Answer: A
 
-In JavaScript, all objects interact by _reference_ when setting them equal to each other.
+ჯავასკრიპტში, ყველა ობიექტი ურთიერთქმედებს ერთმანეთთან _reference_-ით, როდესაც მათ ვატოლებთ ერთმანეთს.
 
-First, variable `c` holds a value to an object. Later, we assign `d` with the same reference that `c` has to the object.
+პირველად, ცვლადი `c` ფლობს ობიექტის მნიშვნელობას. მოგვიანებით, ჩვენ ვანიჭებთ `d`-ს იმავე მითითებით, რაც `c`-ს აქვს ობიექტზე.
 
 <img src="https://i.imgur.com/ko5k0fs.png" width="200">
 
-When you change one object, you change all of them.
+როდესაც თქვენ ცვლით ერთ ობიექტს, თქვენ ცვლით ყველა მათგანს.
 
 </p>
 </details>
 
 ---
 
-###### 7. What's the output?
+###### 7. რას დაგვიბრუნებს კონსოლში?
 
 ```javascript
 let a = 3;
