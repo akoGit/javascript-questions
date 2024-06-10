@@ -262,10 +262,10 @@ console.log(b === c);
 - C: `true` `false` `false`
 - D: `false` `true` `true`
 
-<details><summary><b>პასუხი</b></summary>
+<details><summary><b>Answer</b></summary>
 <p>
 
-#### Answer: C
+#### პასუხი: C
 
 `new Number()` is a built-in function constructor. Although it looks like a number, it's not really a number: it has a bunch of extra features and is an object.
 
