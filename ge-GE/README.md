@@ -267,11 +267,11 @@ console.log(b === c);
 
 #### Answer: C
 
-`new Number()` is a built-in function constructor. Although it looks like a number, it's not really a number: it has a bunch of extra features and is an object.
+`new Number()` არის ჩაშენებული ფუნქცია კონსტრუქტორი. მიუხედავად იმისა, რომ ის რიცხვს გავს, სინამდვილეში რიცხვი არ არის: აქვს ბევრი სხვადასვა მახასიათებლები და არის ობიექტი.
 
-When we use the `==` operator (Equality operator), it only checks whether it has the same _value_. They both have the value of `3`, so it returns `true`.
+როდესაც ვიყენებთ `==` ოპერატორს (ტოლობის ოპერატორი), ის მხოლოდ ამოწმებს აქვს თუ არა იგივე _მნიშვნელობა_. ორივეს აქვს მნიშვნელობა `3`, ამიტომ ის აბრუნებს `true`.
 
-However, when we use the `===` operator (Strict equality operator), both value _and_ type should be the same. It's not: `new Number()` is not a number, it's an **object**. Both return `false.`
+თუმცა, როდესაც ვიყენებთ `===` ოპერატორს (მკაცრი ტოლობის ოპერატორი), ორივე მნიშვნელობა და ტიპი უნდა იყოს ერთნაირი. ეს არ არის: `new Number()` არ არის რიცხვი, ეს არის **ობიექტი**. ორივე აბრუნებს `false.`
 
 </p>
 </details>
