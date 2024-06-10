@@ -262,7 +262,7 @@ console.log(b === c);
 - C: `true` `false` `false`
 - D: `false` `true` `true`
 
-<details><summary><b>Answer</b></summary>
+<details><summary><b>პასუხი</b></summary>
 <p>
 
 #### Answer: C
