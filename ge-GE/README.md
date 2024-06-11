@@ -330,21 +330,21 @@ console.log(greetign);
 
 #### Answer: A
 
-It logs the object, because we just created an empty object on the global object! When we mistyped `greeting` as `greetign`, the JS interpreter actually saw this as:
+გვიბრუნებს ობიექტს, რადგან ჩვენ შევქმენით ცარიელი ობიექტი გლობალურ ობიექტზე! არასწორად დაწერილი `greeting` როგორც `greetign` ჯავასკრიპტის ინტერპრეტერმა დაინახა როგორც:
 
-1. `global.greetign = {}` in Node.js
-2. `window.greetign = {}`, `frames.greetign = {}` and `self.greetign` in browsers.
-3. `self.greetign` in web workers.
-4. `globalThis.greetign` in all environments.
+1. `global.greetign = {}` Node.js -ში.
+2. `window.greetign = {}`, `frames.greetign = {}` და `self.greetign` ბრაუზერში.
+3. `self.greetign` web worker-ებში.
+4. `globalThis.greetign` ყველა გარემოში.
 
-In order to avoid this, we can use `"use strict"`. This makes sure that you have declared a variable before setting it equal to anything.
+ამის თავიდან ასაცილებლად , შეგვიძლია გამოვიყენოთ `"use strict"`. ეს შეამოწმებს, რომ თქვენ დაადეკლარირეთ ცვალდი სანამ რაიმე მნიშვნელობას მიანიჭებდით.
 
 </p>
 </details>
 
 ---
 
-###### 10. What happens when we do this?
+###### 10. რა მოხდება ამ დროს?
 
 ```javascript
 function bark() {
@@ -354,9 +354,9 @@ function bark() {
 bark.animal = 'dog';
 ```
 
-- A: Nothing, this is totally fine!
-- B: `SyntaxError`. You cannot add properties to a function this way.
-- C: `"Woof"` gets logged.
+- A: არაფერი, ეს სრულიად ნორმალურია!
+- B: `SyntaxError`. არ შეგიძლიათ ამ გზით ფუნქციას თვისებები დაუმატოთ.
+- C: `"Woof"`-ს დააბრუნებს.
 - D: `ReferenceError`
 
 <details><summary><b>Answer</b></summary>
@@ -364,16 +364,16 @@ bark.animal = 'dog';
 
 #### Answer: A
 
-This is possible in JavaScript, because functions are objects! (Everything besides primitive types are objects)
+ეს შესაძლებელია ჯავასკრიპტში, რადგან ფუნქციები არის ობიექტები! (პრიმიტიული ტიპების გარდა ყველაფერი ობიექტია)
 
-A function is a special type of object. The code you write yourself isn't the actual function. The function is an object with properties. This property is invocable.
+ფუნქცია არის სპეციალური ტიპის ობიექტი. კოდი, რომელსაც თქვენ თვითონ წერთ, არ არის ფაქტობრივი ფუნქცია. ფუნქცია არის ობიექტი, რომელსაც აქვს თვისებები. ამ თვისების გამოძახება შეუძლებელია.
 
 </p>
 </details>
 
 ---
 
-###### 11. What's the output?
+###### 11. რას დაგვიბრუნებს კონსოლში?
 
 ```javascript
 function Person(firstName, lastName) {
