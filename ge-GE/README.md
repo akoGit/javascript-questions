@@ -399,9 +399,9 @@ console.log(member.getFullName());
 
 #### Answer: A
 
-In JavaScript, functions are objects, and therefore, the method `getFullName` gets added to the constructor function object itself. For that reason, we can call `Person.getFullName()`, but `member.getFullName` throws a `TypeError`. 
+ჯავასკრიპტში, ფუნქციები ობიექტებია, შესაბამისად მეთოდი `getFullName` ემატება კონსტრუქტორ ფუნქციის ობიექტს. ამიტომ, ჩვენ შეგვიძლია გამოვიძახოთ `Person.getFullName()`, მაგრამ `member.getFullName` გვიგდებს `TypeError`-ს.
 
-If you want a method to be available to all object instances, you have to add it to the prototype property:
+თუ გსურთ, რომ მეთოდი იყოს ხელმისაწვდომი ყველა ობიექტის ინსტანციებზე, თქვენ ის უნდა დაამატოთ პროტოტიპის თვისებას:
 
 ```js
 Person.prototype.getFullName = function() {
@@ -414,7 +414,7 @@ Person.prototype.getFullName = function() {
 
 ---
 
-###### 12. What's the output?
+###### 12. რას დაგვიბრუნებს კონსოლში?
 
 ```javascript
 function Person(firstName, lastName) {
